@@ -24,10 +24,21 @@ public class Main {
             */
             System.out.println(date1);
 
+
+            /*
+            In the line below, we create an instance of SimpleFormat, we set a pattern for this instance, in order to
+            use one of the methods that class contains.
+            The method we aim to is format(Date oject). Format requires a date object argument (our date1)
+            And will output the weekday (JAVA knows it because of the EEEE pattern specified by us.)
+            See next comment for implementation.
+             */
             SimpleDateFormat simpleDateformat = new SimpleDateFormat("EEEE");
             System.out.println(simpleDateformat);
 
-            weekDay=simpleDateformat.format(date1).toUpperCase( );
+            /*
+            As per Object Oriented implementation. We first use the syntas object.objectMethod(arg).
+             */
+            weekDay = simpleDateformat.format(date1).toUpperCase( );
             System.out.println(weekDay);
 
 
@@ -41,6 +52,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-        findDay(2,25,1989);
+        findDay(8,5,2015);
     }
 }
