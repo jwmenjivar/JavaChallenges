@@ -6,14 +6,14 @@ import java.util.List;
 public class Main {
 
     public static void plusMinus(List<Integer> arr) {
+        double counterPositive = 0;
+        double counterNegative = 0;
+        double counterZeros = 0;
+        double arrSize = 0;
+
         //This is the number I'll divide by
-        int size = arr.size();
-
+        arrSize = arr.size();
        //Need also to start 3 counters, one for each.
-       int counterPositive = 0;
-       int counterNegative = 0;
-       int counterZeros = 0;
-
         for (Integer number: arr) {
             //Now need to find which are pos, neg and zero.
             if(number > 0) {
@@ -26,13 +26,20 @@ public class Main {
                 counterZeros++;
             }
         }
-        double ratioPos = counterPositive/size;
-        double ratioNeg = counterNegative/size;
-        double ratioZer = counterZeros/size;
+        double ratioPos = counterPositive/arrSize;
+        String formattedPos = String.format("%.6f",ratioPos);
 
-        System.out.println(ratioPos);
-        System.out.println(ratioNeg);
-        System.out.println(ratioZer);
+        double ratioNeg = counterNegative/arrSize;
+        String formattedNeg = String.format("%.6f",ratioNeg);
+
+        double ratioZer = counterZeros/arrSize;
+        String formattedZer = String.format("%.6f",ratioZer);
+
+        System.out.println(formattedPos);
+
+        System.out.println(formattedNeg);
+
+        System.out.println(formattedZer);
     }
 
     public static void main(String[] args) {
