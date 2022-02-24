@@ -16,7 +16,7 @@ public class Main {
         int endTrailIndex = d-1;
         double median = 0;
         for(int k =0 ; k < expenditure.size(); k++ ) {
-                    if(endTrailIndex < expenditure.size() && endTrailIndex+1 < expenditure.size()){
+                    if(endTrailIndex+1 < expenditure.size()){
                         List<Integer> tempArr = new ArrayList<>();
                         for(int j = initialTrailIndex ; j<=endTrailIndex ; j++){
                         tempArr.add(expenditure.get(j));
