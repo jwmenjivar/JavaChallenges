@@ -28,16 +28,19 @@ public class Main {
                         System.out.println("Now it should be sorted" + tempArr);
                             //then we determine the median
                             if(d%2 == 0 ){
-                                int firstMiddleValue =
-                                        initialTrailIndex+(((endTrailIndex-initialTrailIndex +1)/2)-1);
-                                 int secondMiddleValue = firstMiddleValue+1;
-                                median = (expenditure.get(firstMiddleValue) + expenditure.get(secondMiddleValue))/2;
+                                int firstMiddleValueIndex =
+                                        (tempArr.size()-1 + 1)/2 - 1;
+                                int secondMiddleValueIndex = firstMiddleValueIndex + 1;
+                                double firstMiddleValue= tempArr.get(firstMiddleValueIndex);
+                                double secondMiddleValue =tempArr.get(secondMiddleValueIndex);
+                                median = (firstMiddleValue + secondMiddleValue)/2;
+
                             }
                             else if (d%2 != 0){
                                 int middleNumberIndex =
                                         (tempArr.size()-1)/2;
                                 System.out.println("This is the middleNumberIndex: "+middleNumberIndex);
-                                median = tempArr.get(middleNumberIndex);
+                                median = (double) tempArr.get(middleNumberIndex);
                             }
                             if(endTrailIndex+1 < expenditure.size()) {
                                 int currentExpenditure = expenditure.get(endTrailIndex + 1);
