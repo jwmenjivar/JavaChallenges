@@ -16,34 +16,23 @@ public class Main {
         int endTrailIndex = d-1;
         double median = 0;
         for(int k =0 ; k < expenditure.size(); k++ ) {
-                    if(endTrailIndex < expenditure.size()){
-                        //we first make an array containing the elements of trailing
+                    if(endTrailIndex < expenditure.size() && endTrailIndex+1 < expenditure.size()){
                         List<Integer> tempArr = new ArrayList<>();
-
                         for(int j = initialTrailIndex ; j<=endTrailIndex ; j++){
                         tempArr.add(expenditure.get(j));
                         }
-                        //we sort the array in ascending order.
                         Collections.sort(tempArr);
-                            //then we determine the median
                             if(d%2 == 0 ){
-                                int firstMiddleValueIndex = (tempArr.size()-1 + 1)/2 - 1;
-                                //int secondMiddleValueIndex = firstMiddleValueIndex + 1;
+                                int firstMiddleValueIndex = tempArr.size()/2 - 1;
                                 median =(double) (tempArr.get(firstMiddleValueIndex) + tempArr.get(firstMiddleValueIndex+1))/2;
-
                             }
                             else{
-                                int middleNumberIndex =
-                                        (tempArr.size()-1)/2;
+                                int middleNumberIndex = (tempArr.size()-1)/2;
                                 median = (double) tempArr.get(middleNumberIndex);
                             }
-                            if(endTrailIndex+1 < expenditure.size()) {
-                                int currentExpenditure = expenditure.get(endTrailIndex + 1);
-                                if (currentExpenditure >= 2 * median) {
+                            if (expenditure.get(endTrailIndex + 1) >= 2 * median) {
                                     counterNotification++;
                                 }
-                            }
-
                         }
             initialTrailIndex++;
             endTrailIndex++;
