@@ -17,7 +17,16 @@ public class Main {
         double median = 0;
         for(int k =0 ; k < expenditure.size(); k++ ) {
                     if(endTrailIndex < expenditure.size()){
-                            //we first determine the median
+                        //we first make an array containing the elements of trailing
+                        List<Integer> tempArr = new ArrayList<>();
+                        for(int j = initialTrailIndex ; j<=endTrailIndex ; j++){
+                        tempArr.add(expenditure.get(j));
+                        }
+                        System.out.println("We see this is the subarray generated "+ tempArr);
+                        //we sort the array in ascending order.
+                        Collections.sort(tempArr);
+                        System.out.println("Now it should be sorted" + tempArr);
+                            //then we determine the median
                             if(d%2 == 0 ){
                                 int firstMiddleValue =
                                         initialTrailIndex+(((endTrailIndex-initialTrailIndex +1)/2)-1);
@@ -25,7 +34,10 @@ public class Main {
                                 median = (expenditure.get(firstMiddleValue) + expenditure.get(secondMiddleValue))/2;
                             }
                             else if (d%2 != 0){
-                                median = expenditure.get(initialTrailIndex + (endTrailIndex - initialTrailIndex) / 2);
+                                int middleNumberIndex =
+                                        (tempArr.size()-1)/2;
+                                System.out.println("This is the middleNumberIndex: "+middleNumberIndex);
+                                median = tempArr.get(middleNumberIndex);
                             }
                             if(endTrailIndex+1 < expenditure.size()) {
                                 int currentExpenditure = expenditure.get(endTrailIndex + 1);
