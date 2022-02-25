@@ -9,23 +9,23 @@ public class Main {
 
         //the swap is to find the smallest value
         //we do this sorting the array
-        List<Integer> savedList = arr;
+        List<Integer> savedList = new ArrayList<>(arr);
         System.out.println("Saved List: "+savedList);
         Collections.sort(arr);
-        System.out.println("Saved List: "+savedList);
         int smallestNumber =arr.get(0);
 
         //to find out if it has the lowest index. We get its index
-        int smallestNumberIndex = savedList.indexOf(45);
+        int smallestNumberIndex = savedList.indexOf(smallestNumber);
         //if not then look for the item containing the lowest
         if(smallestNumberIndex != 0){
+            //then using temporary variables, perform the swap.
             int tempNumber = savedList.get(0);
             savedList.set(0,smallestNumber);
             savedList.set(smallestNumberIndex,tempNumber);
         counter++;
         }
         System.out.println(savedList);
-        //then using temporary variables, perform the swap.
+
         // swap is completed now count++
         return counter;
     }
