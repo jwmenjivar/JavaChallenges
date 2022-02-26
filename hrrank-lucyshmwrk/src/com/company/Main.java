@@ -28,14 +28,24 @@ public class Main {
             else if(counter >0 ) {
                 //gotta find the smallest of an array list
                 int smallest = savedList.get(j);
-                for (int i = 1; i < savedList.size(); i++) {
-                    if(i + 1 < savedList.size()){
-                        if (smallest > savedList.get(i + 1)) {
-                            smallest = savedList.get(i + 1);
+                for (int i = j; i < savedList.size(); i++) {
+                    int nextItem = savedList.get(i);
+                        if (smallest > savedList.get(i)) {
+                            smallest = savedList.get(i);
                             System.out.println("This is the smallest: " + smallest);
                         }
                     }
-        }
+                //now that we have found the smallest
+                //we get it's index
+                int smallestNumberIndex = savedList.indexOf(smallest);
+                int smallestNumber = savedList.get(smallestNumberIndex);
+                if(smallestNumberIndex != j){
+                    int tempNumber = savedList.get(j);
+                    savedList.set(j, smallestNumber);
+                    savedList.set(smallestNumberIndex, tempNumber);
+                    counter++;
+
+                }
         }
         System.out.println("Includes changes/swaps: " + savedList);
     }
@@ -44,7 +54,8 @@ public class Main {
     public static void main (String[] args) {
 	// write your code here
             List<Integer> arr1 = new ArrayList<>(
-                    List.of(5,45,2,3,4,1, 0)
+                    //     [0  1 2 3 4 5  6]
+                    List.of(4,3,2,1)
             );
             System.out.println("From main "+arr1);
 
