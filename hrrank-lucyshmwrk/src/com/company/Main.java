@@ -4,37 +4,49 @@ import java.util.*;
 
 public class Main {
     public static int lilysHomework(List<Integer> arr) {
+
         int counter = 0;
-//So the core thing is a swap. This is a loop that will contain a counter++ at the end that will be returned as the response to the whole exercise
-
-        //the swap is to find the smallest value
-        //we do this sorting the array
         List<Integer> savedList = new ArrayList<>(arr);
-        System.out.println("Saved List: "+savedList);
+        System.out.println("Saved List: " + savedList);
         Collections.sort(arr);
-        int smallestNumber =arr.get(0);
+        System.out.println("Sorted array" + arr);
+        for( int j=0 ; j <arr.size() ;j++){
 
-        //to find out if it has the lowest index. We get its index
-        int smallestNumberIndex = savedList.indexOf(smallestNumber);
-        //if not then look for the item containing the lowest
-        if(smallestNumberIndex != 0){
-            //then using temporary variables, perform the swap.
-            int tempNumber = savedList.get(0);
-            savedList.set(0,smallestNumber);
-            savedList.set(smallestNumberIndex,tempNumber);
-        counter++;
+            if (counter == 0) {
+                int smallestNumber = arr.get(0);
+                //to find out if it has the lowest index. We get its index
+                int smallestNumberIndex = savedList.indexOf(smallestNumber);
+                //if not then look for the item containing the lowest
+                if (smallestNumberIndex != 0) {
+                    //then using temporary variables, perform the swap.
+                    int tempNumber = savedList.get(0);
+                    savedList.set(0, smallestNumber);
+                    savedList.set(smallestNumberIndex, tempNumber);
+                    counter++;
+                }
+            }
+            else if(counter >0 ) {
+                //gotta find the smallest of an array list
+                int smallest = savedList.get(j);
+                for (int i = 1; i < savedList.size(); i++) {
+                    if(i + 1 < savedList.size()){
+                        if (smallest > savedList.get(i + 1)) {
+                            smallest = savedList.get(i + 1);
+                            System.out.println("This is the smallest: " + smallest);
+                        }
+                    }
         }
-        System.out.println(savedList);
-
-        // swap is completed now count++
+        }
+        System.out.println("Includes changes/swaps: " + savedList);
+    }
         return counter;
     }
     public static void main (String[] args) {
 	// write your code here
             List<Integer> arr1 = new ArrayList<>(
-                    List.of(5,45,2,3,4,1)
+                    List.of(5,45,2,3,4,1, 0)
             );
-            System.out.println(arr1);
+            System.out.println("From main "+arr1);
 
             System.out.println("This is the number of swaps: "+lilysHomework(arr1));
     }
