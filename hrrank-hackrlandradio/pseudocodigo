@@ -1,0 +1,38 @@
+Dado el array [9 5 4 2 6 15 12]
+con n =7 (numero de elementos)
+y con k=2 
+(que es el rango que tiene la antena de lado a lado)
+<por lo que entendi de los ejemplos, me corrigen si no es así>
+		 # # ^ # #
+Ejemplo  1 2 3 4 5   
+En donde la casa 3 lleva la antena, y el rango alcanza 
+para 1 2 en left; y 4 5 en right
+Es decir que la antena alcanza para 5 casas (incluída la de la antena)
+
+Bajo esa premisa y volviendo al array
+
+Lo que entiendo es que lo ordenamos (si queremos)
+[2 4 5 6 9 12 15]
+
+luego agregamos los missing numbers y queda un array asi, 
+que incluye lotes solos y con casa
+[2 3 4 5 6 7 8 9 10 11 12 13 14 15]
+
+Ahora evaluamos a donde podrian ir las antenas
+podriamos generar los siguientes subarrays basados en el fullrange
+
+[2 3 4 5 6] rango de la antena 1 puesta en la casa 4 (que si existe)
+[7 8 9 10 11]rango antena 2 puesta en la casa 9 (que si existe)
+
+[12 13 14 15] 
+ranto antena 3 puesta en la casa 14 que no existen (no count)
+en 13, que no existe (no count)
+en 12, que si existe (no count)
+
+El programa a este punto debe evaluar 
+si hay mas elementos en el subarray
+y si este estan dentro del rango a partir del anterior encontrado (no count)
+Si si hay elementos y no estandentro del rango entonces (count) (15),
+Entonces agregamos otra a 15.
+
+

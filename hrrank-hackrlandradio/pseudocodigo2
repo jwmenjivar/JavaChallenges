@@ -1,0 +1,34 @@
+[2 6 9 12 15]
+k=2
+antenaToInstall k
+full range 5
+[2 3 4 5 6 7 8 9 10 11 12 13 14 15]
+0 1 2 3 4
+2 3 4 5 6 index = k =2 : Exists in original? yes count: no
+k-- = 1
+2 3 4 5 6 index = k =1: Exists in original? yes count: no
+k-- = 0
+2 3 4 5 6 index = k = 0: Exists in original yes count =1
+
+The range will not reach index 3 or k+1 so we continue verifying
+
+2 3 4 5 6 index = k+1 = 3: Exists in original yes count=2
+
+hasta que indice alcanza esta antena?
+si estamos en el 3, entonces hacemos currentIndex+k osea 3 + 2 = 5
+desde el index0 hasta el 5 esta cubierto,
+el lote con casa o sin casa [7] esta cubierto
+
+Next evaluation = currentIndex+k+1 osea 5+1=6 como primer elemento
+con el full range, vamos hacia donde podria estar la mejor posicion de la antena
+
+6 7  8  9 10
+8 9 10 11 12 index for antena 8, value (10) exists in original? yes count ++
+
+indices del 6 al 10, cubiertos con senal
+
+Next evaluation
+11 12 13
+13 14 15
+
+3 elementos son menos que el full range, una antena es suficiente; count++
