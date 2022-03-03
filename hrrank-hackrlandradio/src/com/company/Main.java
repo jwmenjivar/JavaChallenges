@@ -1,0 +1,40 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+    public static int hackerlandRadioTransmitters(List<Integer> x, int k) {
+        System.out.println(x);
+        Collections.sort(x);
+        System.out.println(x);
+
+        int minValue = x.get(0);
+        System.out.println("Minvalue is: "+minValue);
+        int maxValue = x.get(x.size()-1);
+        System.out.println("Maxvalue is: "+maxValue);
+
+        List<Integer> arrayMap = new ArrayList<>();
+
+        for( int i=minValue ; i<=maxValue ;i++){
+        arrayMap.add(i);
+        }
+        System.out.println("This is the arraymap" + arrayMap);
+        int range=2*k+1;
+        System.out.println("range "+range);
+        double numberToCeil= (double) arrayMap.size()/range;
+        double ceiledNumber = Math.ceil(numberToCeil);
+        System.out.println("Ceiled number" + ceiledNumber);
+        return (int) ceiledNumber;
+    }
+    public static void main(String[] args) {
+//9 5 4 2 6 15 12
+        //7 2 4 6 5 9 12 11
+        List<Integer> exampleList = new ArrayList<Integer>(List.of(7,2,4,6,5,9,12,11));
+        System.out.println("k is equal to: "+2);
+        int numberOfAntennae = hackerlandRadioTransmitters(exampleList, 2);
+        System.out.println("This is the number of antennae required: "+ numberOfAntennae);
+    }
+}
