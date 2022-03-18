@@ -1,0 +1,19 @@
+
+S	java:S106
+"9Replace this use of System.out or System.err by a logger.(‹ì÷ýúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(æòï¨ÿÿÿÿÿ
+K
+java:S1751""5Remove this "break" statement or make it conditional.(›ûä·
+S	java:S106%"9Replace this use of System.out or System.err by a logger.(†­Í–ÿÿÿÿÿ
+N	java:S106'"9Replace this use of System.out or System.err by a logger.(€²üÔ
+S	java:S106)"9Replace this use of System.out or System.err by a logger.(äÏúœùÿÿÿÿ
+S	java:S1065"9Replace this use of System.out or System.err by a logger.(…«äÅùÿÿÿÿ
+U	java:S1069"9Replace this use of System.out or System.err by a logger.(òø®ø8¶û“ºù/
+Z	java:S106="9Replace this use of System.out or System.err by a logger.(•è¬´ÿÿÿÿÿ8Õû—ºù/
+U	java:S106C"9Replace this use of System.out or System.err by a logger.(ÞÒ©Ø8¶Ìšºù/
+t
+java:S22933"YReplace the type specification in this constructor call with the diamond operator ("<>").(ËÃéÙûÿÿÿÿ
+n
+java:S22937"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ú‡Ê
+t
+java:S2293;"YReplace the type specification in this constructor call with the diamond operator ("<>").(îÑéõøÿÿÿÿ

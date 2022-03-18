@@ -23,20 +23,22 @@ public class Main {
         for(int i = 0 ; i<arr.size() ; i++){
 
             //row puede ir en aumento
-            for (int j = arr.get(i).size()-1 ; j>=0 ; j--){
+            int n = arr.get(i).size()-1;
+
+            for (int j = n  ; j>=0 ; j--){
                 //column primero es the length of row
                 //la segunda es length of row -1
                 //la segunda es length of row -1 -1
-                if(){}
-
-                sum2 += arr.get(i).get(j) - decrement;
-                System.out.println(sum2);
+                sum2 += arr.get(i).get(j-decrement);
                 decrement++;
-
+                break;
             }
         }
+        System.out.println("This is sum2 = "+sum2);
         int diff = sum1 - sum2;
+        System.out.println(diff);
         int abs = Math.abs(diff);
+        System.out.println("This is absolute value of the difference of sum1 and sum2 " + abs);
         return abs;
 
     }
@@ -55,7 +57,7 @@ public class Main {
         System.out.println(secondRow);
 
         List<Integer> thirdRow = new ArrayList<Integer>();
-        thirdRow.add(6); thirdRow.add(7); thirdRow.add(1);
+        thirdRow.add(5); thirdRow.add(7); thirdRow.add(1);
         System.out.println(thirdRow);
 
         numbers.add(firstRow);
